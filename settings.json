@@ -2,6 +2,7 @@
   "input_folder":"input",
   "input_file": "input.csv",
   "output_file": "output.txt",
-  "csv_deliminator": ","
+  "csv_deliminator": ",",
+  "base_url": ""
 
 }
