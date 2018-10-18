@@ -48,7 +48,7 @@ def parse_csv(settings):
 
             del row[BASE_URL_COL_NAME]  # don't need this column for url creation
             # url = settings.base_url + '&'.join(str(x[0]) + '=' + str(x[1]) for x in row.items())
-            url = settings.base_url + parse.urlencode(row)
+            url = settings.base_url + parse.urlencode(row, safe='{}')
             print(url)
 
 if __name__ == '__main__':
