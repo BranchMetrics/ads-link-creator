@@ -1,0 +1,13 @@
+{
+  "$android_passive_deepview": false,
+  "$3p": "a_google_adwords",
+  "~advertising_partner_name": "Google AdWords",
+  "$ios_passive_deepview": false,
+  "~feature": "paid advertising",
+  "$desktop_deepview": false,
+  "$one_time_use": false,
+  "~branch_ad_format": "Cross-Platform Search",
+  "~channel": "Google AdWords",
+  "$ios_deepview": false,
+  "$android_deepview": false
+}
