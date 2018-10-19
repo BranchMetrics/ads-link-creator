@@ -11,14 +11,27 @@ BASE_URL_COL_NAME = 'base_url'
 
 
 class Settings:
+    """An object to hold all the data in the settings
 
-    def __init__(self, input_file=None, output_file=None, csv_deliminator=None, base_url=None):
+    Stores all the data form the settings.json file so it can be accessed globally.
+
+    input_file (str): the filename we want to parse
+    output_file (str): the file name we want to write to
+    csv_deliminator (str): the delimainator of the values in the input_file
+    base_url (str): the base url to append all data to
+    default_templates (List (str)): a list of all the default templates
+    """
+
+    def __init__(self, input_file=None, output_file=None, csv_deliminator=None, base_url=None, default_templates=[]):
         self.input_file = input_file
         self.output_file = output_file
         self.csv_deliminator = csv_deliminator
         self.base_url = base_url
+        self.default_templates = default_templates
+
 
 settings = Settings()
+
 
 def import_settings():
 
@@ -48,7 +61,7 @@ def parse_csv(settings):
 
             del row[BASE_URL_COL_NAME]  # don't need this column for url creation
             # url = settings.base_url + '&'.join(str(x[0]) + '=' + str(x[1]) for x in row.items())
-            url = settings.base_url + parse.urlencode(row, safe='{}')
+            url = settings.base_url + parse.urlencode(row, safe='{}:') # safe characters do not get encoded
             print(url)
 
 if __name__ == '__main__':
