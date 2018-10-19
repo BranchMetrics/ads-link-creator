@@ -1,2 +1,3 @@
-base_url,android_passive_deepview,og:imagename,platofrm,campaign
-soul.app.link/30?,TRUE,helloworld.png,facebook cross plat,{campgaignname}
+base_url,android_passive_deepview,og:imagename,platofrm,campaign,template_name
+soul.app.link/30?,TRUE,helloworld.png,facebook cross plat,{campgaignname},
+soul.app.link/30?,TRUE,helloworld.png,facebook cross plat,{campgaignname},facebook_app_only
