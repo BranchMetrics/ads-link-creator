@@ -19,15 +19,15 @@ class Settings:
     output_file (str): the file name we want to write to
     csv_deliminator (str): the delimainator of the values in the input_file
     base_url (str): the base url to append all data to
-    default_templates (List (str)): a list of all the default templates
+    templates (List (str)): a list of all the templates
     """
 
-    def __init__(self, input_file=None, output_file=None, csv_deliminator=None, base_url=None, default_templates=[]):
+    def __init__(self, input_file=None, output_file=None, csv_deliminator=None, base_url=None, templates=[]):
         self.input_file = input_file
         self.output_file = output_file
         self.csv_deliminator = csv_deliminator
         self.base_url = base_url
-        self.default_templates = default_templates
+        self.templates = templates
 
 
 settings = Settings()

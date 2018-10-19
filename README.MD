@@ -21,7 +21,8 @@ csv values are defined by their header name (first row of the file)
 ```json
 
 {
-  "input_folder":"input", // folder where the input file lives (relative path) 
+  "input_folder":"input", // folder where the input file lives (relative path)
+  "templates_folder":"templates", //folder where default templates live
   "input_file": "input.csv", // csv file to parse
   "output_file": "output.txt", // where to post outout 
   "csv_deliminator": ",", // what to delimatine csv on 

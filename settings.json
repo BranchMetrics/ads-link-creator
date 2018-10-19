@@ -1,6 +1,6 @@
 {
   "input_folder":"input",
-  "defaults_folder":"defaults",
+  "templates_folder":"templates",
   "input_file": "input.csv",
   "output_file": "output.txt",
   "csv_deliminator": ",",
