@@ -1,11 +1,8 @@
 {
-    "+url": "",
     "$3p": "a_facebook",
     "~secondary_ad_format": "App Install Ads",
     "~advertising_partner_name": "Facebook",
-    "$link_title": "",
     "$one_time_use": false,
-    "~id": "",
     "~branch_ad_format": "App Only",
     "~channel": "Facebook",
     "~feature": "paid advertising"
