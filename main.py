@@ -22,6 +22,10 @@ class Settings:
     csv_deliminator (str): the delimainator of the values in the input_file
     base_url (str): the base url to append all data to
     templates (List (str)): a list of all the templates
+    template_data (dict (dict)): a dictionary with the file name w/o extension as a key and the values are the ones of the file
+    eg. {"google_cross_platoform":{ "$3p": "a_google_adwords", ...}}
+    active_template: (str) the current template name we will be appending to links
+    output_url_list: (List (str)) a list of urls as str to print out
     """
 
     def __init__(self, input_file=None, output_file=None, csv_deliminator=None, base_url=None, templates=[], templates_folder=None):
@@ -33,6 +37,7 @@ class Settings:
         self.templates = templates
         self.template_data = {}
         self.active_template = ''
+        self.output_url_list = []
 
     def get_templates(self):
         for x in os.listdir(self.templates_folder):
@@ -76,7 +81,7 @@ def import_settings():
 
         # required attributes, fail if missing
         settings.input_file = os.path.join(os.path.dirname(sys.argv[0]), data['input_folder'], data['input_file'])
-        settings.output_file = data['output_file']
+        settings.output_file = os.path.join(os.path.dirname(sys.argv[0]), data['output_folder'], data['output_file'])
         settings.csv_deliminator = data['csv_deliminator']
         settings.base_url = data['base_url']
         settings.templates_folder = os.path.join(os.path.dirname(sys.argv[0]), data['templates_folder'])
@@ -105,8 +110,15 @@ def parse_csv(settings):
             link_data = merge_dictionaries(row, settings.template_data.get(settings.active_template, None))
             # url = settings.base_url + '&'.join(str(x[0]) + '=' + str(x[1]) for x in row.items())
             url = settings.base_url + parse.urlencode(link_data, safe='{}:') # safe characters do not get encoded
-            print(url)
+            settings.output_url_list.append(url)
+
+def write_csv(settings):
+    with open(settings.output_file, mode='w') as csv_file:
+        employee_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        for url in settings.output_url_list:
+            employee_writer.writerow([url])
 
 if __name__ == '__main__':
     import_settings()
     parse_csv(settings)
+    write_csv(settings)
