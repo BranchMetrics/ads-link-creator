@@ -62,6 +62,23 @@ current valid template names
 ```
 
 
-The value is the settings file will take priority.  
+**The value is the settings file and `input_file` will take priority.**
+
+
+### Examples
+
+
+input
+```csv
+base_url,android_passive_deepview,og:imagename,platofrm,campaign,template_name
+soul.app.link/30?,TRUE,helloworld.png,facebook cross plat,{campgaignname},
+```
+output: 
+`soul.app.link/30?base_url=soul.app.link%2F30%3F&android_passive_deepview=TRUE&og:imagename=helloworld.png&platofrm=facebook+cross+plat&campaign={campgaignname}`
+
+TODO: output is currently to console, change to file
+  
+
+
 
 
