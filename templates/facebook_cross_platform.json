@@ -1,7 +1,7 @@
 {
     "$3p": "a_facebook",
     "~advertising_partner_name": "Facebook",
-    "$one_time_use": false,
+    "$one_time_use": "false",
     "~branch_ad_format": "Cross-Platform Display",
     "~channel": "Facebook",
     "~feature": "paid advertising"

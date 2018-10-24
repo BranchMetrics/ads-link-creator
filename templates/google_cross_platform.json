@@ -9,5 +9,12 @@
   "~branch_ad_format": "Cross-Platform Search",
   "~channel": "Google AdWords",
   "$ios_deepview": "false",
-  "$android_deepview": "false"
+  "$android_deepview": "false",
+  "~campaign_id": "{campaignid}",
+  "gclid": "{gclid}",
+  "lpurl": "{lpurl}",
+  "~ad_set_id": "{adgroupid}",
+  "~keyword": "{keyword}",
+  "~placement": "{placement}",
+  "$always_deeplink": "false"
 }
