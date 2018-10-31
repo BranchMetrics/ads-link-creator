@@ -38,20 +38,20 @@ base_url,android_passive_deepview,og:imagename,platform
 soul.app.link/30?,TRUE,helloworld.png,facebook cross platform
 ```
 
-**base_url** must be included in either `settings.json` or the `input_file`. 
+**base_url** and **~campaign** must be included in either `settings.json` or the `input_file`. 
 **template_name** is optional. It should be included in either `input_file` as a column header. The current values are the name 
 of the files in templates. the template name column can be null. examples of valid csv files
 
 ```csv
 
-base_url,template_name
-soul.app.link,facebook_app_only
+base_url,template_name,~campaign
+soul.app.link,facebook_app_only,Facebook
 ```
 
 ```csv
 
-base_url,template_name,og:name
-soul.app.link,,testing_links
+base_url,template_name,og:name,~campaign
+soul.app.link,,testing_links,myspace
 ```
 
 current valid template names 
@@ -70,7 +70,7 @@ current valid template names
 
 input
 ```csv
-base_url,android_passive_deepview,og:imagename,platofrm,campaign,template_name
+base_url,android_passive_deepview,og:imagename,platofrm,~campaign,template_name
 soul.app.link/30?,TRUE,helloworld.png,facebook cross plat,{campgaignname},
 ```
 output: 

@@ -9,6 +9,7 @@ import sys
 
 
 BASE_URL_COL_NAME = 'base_url'
+CAMPAIGN_COL_NAME = '~campaign'
 TEMPLATE_COL_NAME = 'template_name'
 
 
@@ -33,6 +34,7 @@ class Settings:
         self.output_file = output_file
         self.csv_deliminator = csv_deliminator
         self.base_url = base_url
+        self.campaign = ''
         self.templates_folder = templates_folder
         self.templates = templates
         self.template_data = {}
@@ -93,8 +95,12 @@ def parse_csv(settings):
     with open(settings.input_file) as csv_file:
         csv_reader = csv.DictReader(csv_file, delimiter=settings.csv_deliminator)
         for row in csv_reader:
+            # required keys
             if BASE_URL_COL_NAME not in row:
                 raise KeyError("No such key ({}) found in {}".format(BASE_URL_COL_NAME, settings.input_file))
+            if CAMPAIGN_COL_NAME not in row:
+                raise KeyError("No such key ({}) found in {}".format(CAMPAIGN_COL_NAME, settings.input_file))
+
 
             if settings.base_url is None or settings.base_url == '':
                 settings.base_url = row.get(BASE_URL_COL_NAME, None)
