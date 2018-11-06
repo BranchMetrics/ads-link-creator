@@ -1,10 +1,11 @@
 {
+  "base_url": "",
+  "input_file": "input.csv",
+  "output_file": "output.csv",
+
   "templates_folder":"templates",
   "input_folder":"input",
-  "input_file": "input.csv",
   "output_folder":"output",
-  "output_file": "output.csv",
-  "csv_deliminator": ",",
-  "base_url": ""
+  "csv_deliminator": ","
 
 }
