@@ -74,9 +74,9 @@ current valid template names
 input
 ```csv
 base_url,android_passive_deepview,og:imagename,platofrm,~campaign,template_name
-company.app.link/30?,TRUE,helloworld.png,facebook cross plat,{campgaignname},
+company.app.link/3p?,TRUE,helloworld.png,facebook cross plat,{campgaignname},
 ```
 output (located in output/output.csv)
 ```csv
-soul.app.link/30?base_url=soul.app.link%2F30%3F&android_passive_deepview=TRUE&og:imagename=helloworld.png&platofrm=facebook+cross+plat&campaign={campgaignname}
+soul.app.link/30?base_url=company.app.link%2F3p%3F&android_passive_deepview=TRUE&og:imagename=helloworld.png&platofrm=facebook+cross+plat&campaign={campgaignname}
 ```
